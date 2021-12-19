@@ -121,7 +121,7 @@
     "minimist": "^1.2.5",
     "mongodb": "^4.2.1",
     "mongodb-connection-string-url": "^2.3.2",
-    "mongoose": "^6.1.1",
+    "mongoose": "^6.1.2",
     "mpath": "^0.8.4",
     "mquery": "^4.0.0",
     "ms": "^2.0.0",
