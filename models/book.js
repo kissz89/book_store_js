@@ -1,6 +1,6 @@
 const { truncate } = require('graceful-fs')
 const mongoose = require('mongoose')
-
+const path = require('path')
 const coverImageBasePath = 'uploads/bookCovers'
 
 const bookSchema = new mongoose.Schema({
@@ -33,7 +33,13 @@ const bookSchema = new mongoose.Schema({
         required: true,
         ref: 'Author'
     }
-})  
+}) 
+
+bookSchema.virtual('coverImagepath').get(function(){
+    if(this.coverImageName != null){
+        return path.join('/', coverImageBasePath, this.coverImageName)
+    }
+})
 
 module.exports = mongoose.model('Book', bookSchema)
 module.exports.coverImageBasePath = coverImageBasePath
